@@ -1,9 +1,10 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link, useParams, useRouteMatch } from "react-router-dom";
 import Movies from "./components/Movies.jsx";
 import Admin from "./components/Admin.jsx";
 import Home from "./components/Home.jsx";
 import Categories from "./components/Categories.jsx";
+import OneMovie from "./components/OneMovie.jsx" 
 
 /*
  * We route by wrapping our content in a router and creating <Link to=""> tags
@@ -43,10 +44,10 @@ export default function App() {
 					</div>
 					<div className="col-md-10">
 						<Switch>
-							<Route path="/movies/:id">
-								<Movie />
+							<Route path="/movies/:id" component={OneMovie}>
+
 							</Route>
-							<Route path="/movies">
+						<Route path="/movies">
 								<Movies />
 							</Route>
 							<Route exact path="/by-category">
