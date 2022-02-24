@@ -1,9 +1,11 @@
 import React, { Fragment } from "react";
 import { HashRouter as Router, Switch, Route, Link } from "react-router-dom";
+import Movies from "./components/Movies.jsx";
+import Admin from "./components/Admin.jsx";
+import Home from "./components/Home.jsx";
 
 export default function App() {
 	return (
-		// It is necessary to wrap the component in the Router tag
 		<Router>		
 			<div className="container">
 				<div className="row">
@@ -47,14 +49,3 @@ export default function App() {
 	)
 }
 
-function Home () {
-	return <h2>Home</h2>
-}
-
-function Movies () {
-	return <h2>Movies</h2>
-}
-
-function Admin() {
-	return <h2>Manage Catalogue</h2>
-}
