@@ -1,6 +1,21 @@
 package models
 
-import "time"
+import (
+	"database/sql"
+	"time"
+)
+
+// Wrapper for database
+type Models struct {
+	DB DBModel
+}
+
+// Returns models with db pool
+func NewModels(db *sql.DB) Models {
+	return Models{
+		DB: DBModel{DB: db},
+	}
+}
 
 type Movie struct {
 	ID          int          `json:"id"`
