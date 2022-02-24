@@ -1,6 +1,6 @@
 build:
-	go build -o ./cmd/api/main.go
+	go build -o ./cmd/api/*.go
 
 run:
-	go run ./cmd/api/main.go
+	go run ./cmd/api/*.go
 
