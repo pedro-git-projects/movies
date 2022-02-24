@@ -1,9 +1,10 @@
 import React, { Component, Fragment } from "react";
+import { Link } from "react-router-dom";
 
 export default class Movies extends Component {
 	// defining local state
 	state = { movies: []}
-	
+
 	// executes after a component is rendered to the screen
 	componentDidMount() {
 		// hardwiring state for testing
@@ -25,7 +26,9 @@ export default class Movies extends Component {
 					{this.state.movies.map(
 						(m) => (
 							<li key={m.id}>
-								{m.title}
+								<Link to={`/movies/${m.id}`}>
+									{m.title}
+								</Link>
 							</li>
 						)
 					)}
